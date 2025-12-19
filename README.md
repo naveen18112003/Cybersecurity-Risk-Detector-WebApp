@@ -1,220 +1,220 @@
+🛡️ Cybersecurity Risk Detector Web App (ML-Based)
+📌 Project Overview
 
+The Cybersecurity Risk Detector Web App is an ML-based and explainable cybersecurity assessment system built using Python and Streamlit.
 
----
+The application uses a trained machine learning model to predict a system’s cybersecurity risk level (Low / Medium / High) and then provides:
 
-## 📘 Project Guide — *Cybersecurity Risk Detector using ML & Streamlit*
+Risk explanation (why this risk occurred)
 
----
+Severity level
 
-### 🛡️ Project Title:
+Possible cyber attacks
 
-**Cybersecurity Risk Detector**
+Auto-generated security precautions
 
----
+Downloadable security report
 
-### 📌 Problem Statement:
+Offline cybersecurity chatbot
 
-In today's digital world, systems are often exposed to various cybersecurity threats. Regular users or organizations may not always have the expertise or tools to assess their system’s security posture in real-time.
+👉 The entire system works offline and does not use any external APIs.
 
-This project solves that problem by using **machine learning** to predict the **cyber risk level** of a system based on a few basic input parameters.
+🎯 Problem Statement
 
----
+Many systems are vulnerable to cyber attacks due to weak configurations, outdated software, and poor security practices.
+Non-technical users often find it difficult to understand their system’s security risk.
 
-### 🎯 Objective:
+This project simplifies cybersecurity assessment by converting basic system security indicators into meaningful ML-driven insights.
 
-To develop a machine learning-based web application that:
+🚀 Key Features
 
-* Accepts key system information from users
-* Predicts whether the system is at **Low**, **Medium**, or **High** cybersecurity risk
-* Is easy to use by anyone via a simple web interface
+🔮 Machine Learning-based Risk Prediction
 
----
+🧠 Risk Explanation (Explainable AI)
 
-### 🧠 Novelty of the Project:
+📊 Severity Meter
 
-| Aspect                        | Innovation                                                                                                                                    |
-| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🧾 **Custom Dataset**         | Dataset was synthetically generated to mimic real-world system vulnerabilities and incidents, allowing full control over features and labels. |
-| 🔄 **Multi-Model Comparison** | 10+ ML algorithms were tested, evaluated, and compared to choose the best-performing model.                                                   |
-| 🌐 **Streamlit Integration**  | Real-time web interface created using Streamlit, enabling users to interactively test risk levels without needing any technical setup.        |
-| 📦 **Reusable Model**         | Best model was saved using `joblib` and integrated into the app for lightweight and fast predictions.                                         |
-| 🎓 **Educational Tool**       | Project also acts as a learning resource for beginners in ML + cybersecurity domains.                                                         |
+⚠️ Possible Attack Prediction
 
----
+🛡️ Auto Security Precautions
 
-### 🛠️ Technologies Used:
+📄 Downloadable Cybersecurity Report
 
-* **Programming Language:** Python
-* **ML Libraries:** scikit-learn
-* **Data Processing:** pandas, numpy
-* **Visualization:** matplotlib
-* **Web App Framework:** Streamlit
-* **Model Saving:** joblib
-* **Version Control:** Git & GitHub
+🤖 Offline Chatbot for Cyber Awareness
 
----
+🔒 Fully Offline & Privacy-Friendly
 
-### 🔧 Implementation Steps:
+🧠 Machine Learning Implementation
 
-#### 1. Dataset Creation:
+A dataset (veri.csv) was prepared using cybersecurity-related features.
 
-* A synthetic dataset was generated and saved as `veri.csv` using Python code (`veri.ipynb`).
-* Features included: vulnerabilities, uptime, incidents, patch frequency, and open ports.
+Multiple ML algorithms were tested during experimentation.
 
-#### 2. Model Training:
+The best-performing model was saved as a joblib file (eniyi.joblib).
 
-* Trained 10 different ML models: Decision Tree, Random Forest, Logistic Regression, etc.
-* Selected the **best-performing model** based on accuracy and precision.
-* Saved final model as `eniyi.joblib`.
+The Streamlit app loads the trained model and performs real-time predictions using model.predict().
 
-#### 3. Web App Development:
+Model Type: Classification (Low / Medium / High Risk)
 
-* Built a user interface using **Streamlit** where users can input system data.
-* Integrated the trained model into the app to predict real-time cyber risk.
+📂 Project Structure
+Cybersecurity-Risk-Detector-WebApp/
+│
+├── app.py                 # Main Streamlit application
+├── chatbot.py             # Offline chatbot logic
+├── precautions.py         # Auto security precautions
+├── risk_reason.py         # Risk explanation logic
+├── severity.py            # Severity score calculation
+├── attacks.py             # Possible cyber attacks
+├── report.py              # Security report generation
+├── veri.csv               # Dataset used for training
+├── eniyi.joblib           # Trained ML model
+├── veri.ipynb             # Model training notebook
+├── README.md              # Documentation
 
-#### 4. Testing & Demonstration:
+🧮 Input Parameters & Where to Get Them (IMPORTANT)
 
-* The app was tested with different inputs.
-* A working demo video is linked in `link.text`.
+The system requires five input parameters, which represent real-world cybersecurity indicators.
 
----
+1️⃣ Number of Vulnerabilities
 
-### 📊 Sample Inputs:
+What it means:
+Known security weaknesses in the system.
 
-| Parameter          | Example |
-| ------------------ | ------- |
-| Vulnerabilities    | 10      |
-| Uptime (days)      | 120     |
-| Security Incidents | 3       |
-| Patch Frequency    | Weekly  |
-| Open Ports         | 12      |
+Where to get it from:
 
-**Prediction Output:** 🔴 **High Risk**
+Vulnerability scanning tools (e.g., Nessus, OpenVAS)
 
----
+Security audit reports
 
-### 📁 Project Structure:
+OS security assessments
 
-```
-cyber-risk-detector/
-├── veri.csv                  # Generated dataset
-├── veri.ipynb                # Data generation & training notebook
-├── eniyi.joblib              # Trained ML model
-├── app.py                    # Streamlit web app
-├── README.md                 # Project description
-└── link.text                 # Demo video link
-```
+Example: 5
 
----
+2️⃣ System Uptime (in days)
 
-### 🚀 How to Run Locally:
+What it means:
+How long the system has been running without restart.
 
-1. Clone the repo:
+Where to get it from:
 
-   ```bash
-   git clone https://github.com/yourusername/cyber-risk-detector
-   cd cyber-risk-detector
-   ```
+Windows: Task Manager → Performance → Uptime
 
-2. Install dependencies:
+Linux: uptime command
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+Example: 30
 
-3. Run the app:
+3️⃣ Number of Security Incidents
 
-   ```bash
-   streamlit run app.py
-   ```
+What it means:
+Past security events such as malware detections, alerts, or failed login attempts.
 
----
+Where to get it from:
 
-### 🎓 Ideal For:
+Antivirus logs
 
-* B.Tech/BE Machine Learning projects
-* Cybersecurity awareness tools
-* Educational demos for risk modeling
-* Personal portfolio project
+Windows Event Viewer
 
----
+Firewall logs
 
-## How to Collect Cybersecurity Risk Parameters on WindowsNumber of Vulnerabilities Definition: Known flaws or bugs in your system/software that attackers can exploit Tools/Methods:
+Example: 1
 
-Use Nessus (https://www.tenable.com/products/nessus) to scan and report system vulnerabilities.
+4️⃣ Patch Update Frequency
 
-Use Microsoft Defender: Go to Windows Security → Virus & threat protection → Protection history
+What it means:
+How frequently security updates are applied.
 
-System Uptime (in days)
-Definition: The number of days your system has been running continuously.
-Commands:
+Possible values:
 
-Command Prompt: systeminfo | find "System Boot Time"
+Daily
 
-PowerShell: (get-date) - (gcim Win32_OperatingSystem).LastBootUpTime
+Weekly
 
-Number of Security Incidents
-Definition: Events like failed logins, malware detection, unauthorized access.
-Steps:
+Monthly
 
-Open Event Viewer: Press Win + R → type: eventvwr.msc
+Where to get it from:
 
-Navigate to Windows Logs → Security
+OS update history
 
-Check for:
+Organization patch management policies
 
-4625: Failed login attempts
+5️⃣ Number of Open Ports
 
-4688: Suspicious process creation
+What it means:
+Open network ports increase attack surface.
 
-4720: New user account created
+Where to get it from:
 
-Also check: Windows Security → Virus & Threat Protection → Protection history
+Windows: netstat -an
 
-Patch Update Frequency
-Definition: How frequently system updates are applied (Daily/Weekly/Monthly).
-Steps:
+Linux: ss or nmap
 
-Go to Settings → Update & Security → View update history
+Example: 10
 
-Based on pattern:
+🔍 Risk Prediction Workflow
 
-Daily: Every 1–2 days
+User enters system security inputs
 
-Weekly: Once a week
+Inputs are converted into numerical features
 
-Monthly: Once or twice a month
+Trained ML model predicts risk level
 
-Number of Open Ports
-Definition: Network ports that are open and accepting connections.
-Commands:
+Explainable logic provides:
 
-Command Prompt: netstat -an | find "LISTEN"
+Risk reason
 
-PowerShell: Get-NetTCPConnection | Where-Object {$_.State -eq "Listen"} | Measure-Object
+Severity score
 
-Ideal For:
+Possible attacks
 
-Final year ML/Cybersecurity projects
+Auto precautions
 
-Resume and portfolio projects
+Security report is generated
 
-Practical demonstration in colleges or workshops
+🛡️ Auto Security Precautions
 
-Awareness tool for non-tech users
+Based on the predicted risk level, the system automatically recommends actions such as:
 
-Let me know if you'd like to add:
+Password hardening
 
-Your name and college
+Firewall & antivirus activation
 
-Demo screenshots
+Data backup and encryption
 
-Submission date
+Network access restrictions
 
-I can generate that version too!
+📄 Cybersecurity Report
 
+The user can download a detailed cybersecurity report containing:
 
+Risk level
 
+Severity score
 
+Risk explanation
 
+Possible attack types
 
+Recommended precautions
+
+🤖 Offline Chatbot
+
+The built-in chatbot helps users:
+
+Understand cybersecurity concepts
+
+Ask about risks and attacks
+
+Learn about security best practices
+
+⚠️ The chatbot works offline and does not use any APIs.
+
+▶️ How to Run the Project
+pip install -r requirements.txt
+streamlit run app.py
+
+🎯 Conclusion
+
+This project demonstrates how machine learning can be combined with explainable logic to build a practical, user-friendly cybersecurity risk assessment system suitable for real-world scenarios.
+
+⭐ Author
+Naveen Kumar Yadav
